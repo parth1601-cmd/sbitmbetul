@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shri Balaji Institute - Welcome</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2575fc;
+            --secondary-color: #6a11cb;
+            --text-light: #ffffff;
+            --background-light: #f4f4f4;
+            --text-dark: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--background-light);
+            color: var(--text-dark);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--primary-color);
+            color: var(--text-light);
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .navbar .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .navbar .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero a {
+            display: inline-block;
+            background: var(--text-light);
+            color: var(--primary-color);
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .hero a:hover {
+            background: var(--secondary-color);
+            color: var(--text-light);
+            transform: translateY(-3px);
+        }
+
+        .about {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px 20px;
+            background: var(--background-light);
+        }
+
+        .feature {
+            background: var(--text-light);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        .courses {
+            padding: 40px 20px;
+            background: var(--background-light);
+        }
+
+        .courses h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .course-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .course {
+            background: var(--text-light);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .course h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .course p {
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        .faculty {
+            padding: 40px 20px;
+            text-align: center;
+            background: var(--text-light);
+        }
+
+        .faculty h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .faculty-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .faculty-card {
+            background: var(--background-light);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .faculty-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--primary-color);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* AI Assistant styles */
+        .ai-assistant-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: var(--text-light);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .ai-assistant-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .chat-widget {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: var(--text-light);
+            border: 1px solid #ddd;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            width: 300px;
+            display: none;
+            flex-direction: column;
+            max-height: 400px;
+            overflow: hidden;
+        }
+
+        .chat-widget header {
+            background: var(--primary-color);
+            color: var(--text-light);
+            padding: 10px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .chat-widget .chat-body {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            font-size: 0.9rem;
+        }
+
+        .chat-widget .chat-footer {
+            display: flex;
+            border-top: 1px solid #ddd;
+        }
+
+        .chat-widget input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 0;
+            font-size: 0.9rem;
+        }
+
+        .chat-widget button {
+            padding: 10px;
+            background: var(--primary-color);
+            color: var(--text-light);
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <img src="file:///C:/Users/parth/Downloads/8ffe85be-172d-4a82-928d-32ab83223742%20(1).jpeg" alt="SBITM Logo" style="height: 50px; vertical-align: middle; margin-right: 10px;">
+            Shri Balaji Institute of Technology & Management, Betul
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#faculty">Faculty</a></li>
+            <li><a href="registration.html">Register</a></li>
+        </ul>
+    </header>
+    
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <h1>Welcome to Shri Balaji Institute</h1>
+        <p>Empowering students with knowledge, skills, and opportunities to build a better future.</p>
+        <a href="registration.html">Register Now</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>
+            Shri Balaji Institute is a premier institution dedicated to excellence in education. With state-of-the-art facilities 
+            and a vibrant campus life, we ensure every student achieves their full potential.
+        </p>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="feature">
+            <h3>Modern Labs</h3>
+            <p>Equipped with cutting-edge technology to support hands-on learning.</p>
+        </div>
+        <div class="feature">
+            <h3>Library</h3>
+            <p>A vast collection of books and digital resources for every field of study.</p>
+        </div>
+        <div class="feature">
+            <h3>Campus Placement</h3>
+            <p>Top recruiters and guaranteed placement support for students.</p>
+        </div>
+        <div class="feature">
+            <h3>Sports Facilities</h3>
+            <p>Encouraging physical fitness with modern sports amenities.</p>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
+        <h2>Our Courses</h2>
+        <div class="course-list">
+            <!-- B.Sc Course -->
+            <div class="course">
+                <h3>B.Sc</h3>
+                <p>Bachelor of Science - Explore the world of scientific innovations.</p>
+                <div class="course-details">
+                    <ul>
+                        <li><strong>Duration:</strong> 3 years</li>
+                        <li><strong>Eligibility:</strong> 10+2 with Science stream</li>
+                        <li><strong>Career Options:</strong> Research Scientist, Data Analyst, Environmental Analyst</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- B.A Course -->
+            <div class="course">
+                <h3>B.A</h3>
+                <p>Bachelor of Arts - Delve into the realms of creativity and analysis.</p>
+                <div class="course-details">
+                    <ul>
+                        <li><strong>Duration:</strong> 3 years</li>
+                        <li><strong>Eligibility:</strong> 10+2 in any stream</li>
+                        <li><strong>Career Options:</strong> Content Writer, Public Relations Officer, Academic Researcher</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- B.Com Course -->
+            <div class="course">
+                <h3>B.Com</h3>
+                <p>Bachelor of Commerce - Build a strong foundation in business and finance.</p>
+                <div class="course-details">
+                    <ul>
+                        <li><strong>Duration:</strong> 3 years</li>
+                        <li><strong>Eligibility:</strong> 10+2 with Commerce stream</li>
+                        <li><strong>Career Options:</strong> Accountant, Financial Analyst, Business Consultant</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- B.Tech Course -->
+            <div class="course">
+                <h3>B.Tech</h3>
+                <p>Bachelor of Technology - Engineer a future full of possibilities.</p>
+                <div class="course-details">
+                    <ul>
+                        <li><strong>Duration:</strong> 4 years</li>
+                        <li><strong>Eligibility:</strong> 10+2 with Science stream (Physics, Chemistry, Mathematics)</li>
+                        <li><strong>Career Options:</strong> Software Engineer, Civil Engineer, Data Scientist</li>
+                        <div class="course-details" style="display: none;">
+                            <ul>
+                                <li><strong>Duration:</strong> 3 years</li>
+                                <li><strong>Eligibility:</strong> 10+2 with Science stream</li>
+                                <li><strong>Career Options:</strong> Research Scientist, Data Analyst, Environmental Analyst</li>
+                            </ul>
+                        </div>  
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<script>
+    // JavaScript to toggle course details
+    document.querySelectorAll('.course').forEach(course => {
+        course.addEventListener('click', () => {
+            // Hide all course details
+            document.querySelectorAll('.course .course-details').forEach(details => {
+                details.style.display = 'none';
+            });
+
+            // Show the clicked course's details
+            const details = course.querySelector('.course-details');
+            details.style.display = 'block';
+        });
+    });
+</script>
+
+    
+
+    <!-- Faculty Section -->
+    <section id="faculty" class="faculty">
+        <h2>Our Esteemed Faculty</h2>
+        <div class="faculty-list">
+            <div class="faculty-card">
+                <h3>Dr. sakshi suryavanshi</h3>
+                <p>Head of Science Department</p>
+                <img src="">
+            </div>
+            <div class="faculty-card">
+                <h3>Prof. nitin yadav</h3>
+                <p>Arts Department Faculty</p>
+            </div>
+            <div class="faculty-card">
+                <h3>Dr.shikha pawar</h3>
+                <p>Commerce Department Specialist</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2024 Shri Balaji Institute. All rights reserved.
+    </footer>
+
+    <!-- AI Assistant -->
+    <button class="ai-assistant-btn" onclick="toggleChatWidget()">
+        <i class="fas fa-robot"></i>
+    </button>
+    <div class="chat-widget">
+        <header>AI Assistant</header>
+        <div class="chat-body"></div>
+        <div class="chat-footer">
+            <input type="text" placeholder="Ask me anything..." />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+        }
+
+        function toggleChatWidget() {
+            const chatWidget = document.querySelector('.chat-widget');
+            chatWidget.style.display = chatWidget.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function sendMessage() {
+            const chatBody = document.querySelector('.chat-body');
+            const input = document.querySelector('.chat-widget input');
+            const message = input.value.trim();
+
+            if (message) {
+                const userMessage = document.createElement('div');
+                userMessage.textContent = message;
+                userMessage.style.textAlign = 'right';
+                chatBody.appendChild(userMessage);
+
+                input.value = '';
+
+                // Simulate AI response
+                setTimeout(() => {
+                    const aiMessage = document.createElement('div');
+                    aiMessage.textContent = "I am here to help!";
+                    chatBody.appendChild(aiMessage);
+
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>/

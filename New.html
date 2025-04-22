@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shri Balaji Institute - Welcome</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2575fc;
+            --secondary-color: #6a11cb;
+            --text-light: #ffffff;
+            --background-light: #f4f4f4;
+            --text-dark: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--background-light);
+            color: var(--text-dark);
+            min-height: 100vh;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero a {
+            display: inline-block;
+            background: var(--text-light);
+            color: var(--primary-color);
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .hero a:hover {
+            background: var(--secondary-color);
+            color: var(--text-light);
+            transform: translateY(-3px);
+        }
+
+        .about {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .courses {
+            padding: 40px 20px;
+            background: var(--background-light);
+        }
+
+        .courses h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .course-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .course {
+            background: var(--text-light);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .course h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .course p {
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--primary-color);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about h2, .courses h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>Welcome to Shri Balaji Institute</h1>
+        <p>Empowering students with knowledge, skills, and opportunities to build a better future.</p>
+        <a href="registration.html">Register Now</a>
+    </header>
+
+    <section class="about">
+        <h2>About Us</h2>
+        <p>
+            Shri Balaji Institute is a premier institution dedicated to excellence in education. With state-of-the-art facilities 
+            and a vibrant campus life, we ensure every student achieves their full potential.
+        </p>
+    </section>
+
+    <section class="courses">
+        <h2>Our Courses</h2>
+        <div class="course-list">
+            <div class="course">
+                <h3>B.Sc</h3>
+                <p>Bachelor of Science - Explore the world of scientific innovations.</p>
+            </div>
+            <div class="course">
+                <h3>B.A</h3>
+                <p>Bachelor of Arts - Delve into the realms of creativity and analysis.</p>
+            </div>
+            <div class="course">
+                <h3>B.Com</h3>
+                <p>Bachelor of Commerce - Build a strong foundation in business and finance.</p>
+            </div>
+            <div class="course">
+                <h3>B.Tech</h3>
+                <p>Bachelor of Technology - Engineer a future full of possibilities.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        &copy; 2024 Shri Balaji Institute. All rights reserved.
+    </footer>
+</body>
+</html>
